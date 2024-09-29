@@ -28,6 +28,8 @@ def get_news(category=None, country=None):
     image = []
     url = []
     for i in data:
+        if len(title) > 0 and title[-1] == i["title"]:
+            continue
         title.append(i.get("title", ""))
         description.append(i.get("description", ""))
         image.append(i.get("image", ""))
