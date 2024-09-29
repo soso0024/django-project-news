@@ -11,7 +11,7 @@ MEDIA_API_KEY = env.get_value("MEDIA_API_KEY", str)
 
 def get_news(category):
     r = requests.get(
-        f"http://api.mediastack.com/v1/news?access_key={MEDIA_API_KEY}&categories={category}"
+        f"http://api.mediastack.com/v1/news?access_key={MEDIA_API_KEY}&categories={category}&limit=9"
     )
     res = r.json()
     data = res["data"]
@@ -30,7 +30,12 @@ def get_news(category):
 
 def index(request):
     news = get_news("general")
-    return render(request, "newsapp/index.html", {"news": news})
+    # featured_news = get_featured_news()
+    return render(
+        request,
+        "newsapp/index.html",
+        {"news": news},
+    )
 
 
 # Create your views here.

@@ -71,38 +71,6 @@
       </div>
     </nav>
 
-    <!-- カルーセル -->
-    <div id="newsCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        {% for title, description, image, url in featured_news %}
-        <div class="carousel-item {% if forloop.first %}active{% endif %}">
-          <img src="{{ image }}" class="d-block w-100" alt="..." />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>{{ title }}</h5>
-            <p>{{ description }}</p>
-            <a href="{{ url }}" class="btn btn-primary">Read More</a>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#newsCarousel"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#newsCarousel"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      </button>
-    </div>
-
     <!-- メインコンテンツ -->
     <main>
       <section class="py-5 text-center container">
